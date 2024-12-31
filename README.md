@@ -1,1 +1,1 @@
-# iNeuronix.ai
+# Pixonate-AI-Lab-Pvt-Ltd

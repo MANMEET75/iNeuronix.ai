@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Pixonate Lab - Empowering Manufacturing Excellence!</title>
+        <link rel="icon" type="image/x-icon" href="img/siteicon.png">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+            rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css" />
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+
+    <style>
+
+        .header-carousel {
+            position: relative;
+        }
+        
+        .header-carousel-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner-carousel .slide-item .left-top-line,
+        .banner-carousel .slide-item .right-bottom-curve,
+        .banner-carousel .slide-item .right-top-curve {
+            position: absolute;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 1000ms ease, transform 1000ms ease;
+        }
+        
+        .banner-carousel .slide-item .left-top-line {
+            left: 0;
+            top: 0;
+            width: 350px;
+            max-width: 100%;
+            height: 100%;
+            background: url(img/left-curve-line.png) left top no-repeat;
+            transform: translateY(-100%);
+        }
+        
+        .banner-carousel .slide-item .right-bottom-curve {
+            right: 0;
+            top: 0;
+            width: 655px;
+            max-width: 100%;
+            height: 100%;
+            background: url(img/right-curved-bg.png) right bottom no-repeat;
+            transform: translateX(700px);
+        }
+        
+        .banner-carousel .slide-item .right-top-curve {
+            right: 0;
+            top: 0;
+            width: 164px;
+            max-width: 100%;
+            height: 100%;
+            background: url(img/right-white-curve.png) right top no-repeat;
+            transform: translateX(400px);
+        }
+        
+        /* Active slide styles */
+        .banner-carousel .active .left-top-line {
+            opacity: 1;
+            transform: translate(0);
+            transition-delay: 200ms;
+        }
+        
+        .banner-carousel .active .right-bottom-curve {
+            opacity: 1;
+            transform: translate(0);
+            transition-delay: 1300ms;
+        }
+        
+        .banner-carousel .active .right-top-curve {
+            opacity: 1;
+            transform: translate(0);
+            transition-delay: 1300ms;
+        }
+        
+        
+        
+        .custom-section {
+            position: relative;
+            overflow: hidden;
+            padding: 60px 0; /* Adjust padding as needed */
+        }
+        
+        /* Scroll effect */
+        .custom-section {
+            animation: scrollEffect 1s ease-in-out forwards;
+        }
+        
+        @keyframes scrollEffect {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Shine effect */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .custom-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            opacity: 0; /* Start with the image hidden */
+            animation: fadeIn 1s forwards; /* Fade-in animation */
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px); /* Start from the left */
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 50%);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        /* button css start navbar */
+        .pulse-glow {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            animation: pulse 2s infinite;
+          }
+        
+          .pulse-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: pulse-glow-effect 2s infinite;
+            z-index: 0;
+          }
+        
+          .pulse-glow:hover::before {
+            animation: pulse-glow-effect 1s infinite;
+          }
+        
+          @keyframes pulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+        
+          @keyframes pulse-glow-effect {
+            0% {
+              transform: scale(3);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(1);
+              opacity: 0;
+            }
+          }
+        
+          .pulse-glow:hover {
+            box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.5);
+          }
+        /* button css end */
+        
+        .custom-topbar {
+            background-color: #0874b0;
+          }
+        
+          .custom-border {
+            border-color: white !important;
+          }
+        
+          .text-white {
+            color: white !important;
+          }
+        
+        </style>
+
+    <body>
+
+                <!-- Spinner Start -->
+                <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <!-- Spinner End -->
+        
+                <!-- Topbar Start -->
+                <div class="container-fluid topbar px-0 px-lg-4 py-2 d-none d-lg-block custom-topbar">
+                    <div class="container">
+                        <div class="row gx-0 align-items-center">
+                            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                                <div class="d-flex flex-wrap">
+                                    <div class="border-end pe-3 custom-border">
+                                        <a href="#" class="text-white small"><i class="fas fa-phone-alt text-white me-2"></i>+91 8275563954</a>
+                                    </div>
+                                    <div class="ps-3">
+                                        <a href="mailto:example@gmail.com" class="text-white small"><i class="fas fa-envelope text-white me-2"></i> contact@pixonate.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center text-lg-end">
+                                <div class="d-flex justify-content-end">
+                                    <div class="d-flex border-end pe-3 custom-border">
+                                        <a class="btn p-0 text-white me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn p-0 text-white me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn p-0 text-white me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                        <a class="btn p-0 text-white me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Topbar End -->
+                <!-- color code theme #0874b0 -->
+                <!-- Navbar & Hero Start -->
+                <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a href="index.html" class="navbar-brand p-0">
+                                <img src="img/Pixonate logo.png" alt="Logo" class="navbar-logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                                <span class="fa fa-bars"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <!-- Align all items to the right including "Get a Quote" button -->
+                                <div class="navbar-nav ms-auto align-items-center">
+                                    <a href="index.html" class="nav-item nav-link">Home</a>
+                                    <a href="about.html" class="nav-item nav-link">About</a>
+                                    <a href="service.html" class="nav-item nav-link active">Services</a>
+                                    <a href="carrer.html" class="nav-item nav-link">Careers</a>
+                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                    <!-- Get a Quote Button -->
+                        <div class="nav-btn px-3">
+                            <a href="#" id="getQuoteBtn" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0 pulse-glow">Get a Quote</a>
+                        </div>
+
+                        <!-- Modal for Query Box -->
+                        <div id="quoteModal" class="modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title">Send a Query</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                <form id="quoteForm">
+                                    <div class="mb-3">
+                                    <label for="query" class="form-label">Your Query</label>
+                                    <textarea class="form-control" id="query" rows="3" placeholder="Write your query here..."></textarea>
+                                    </div>
+                                </form>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="sendEmailBtn">Send</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+
+
+       
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center bg-primary">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+
+        <!-- Header Start -->
+        <!-- <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Services</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active text-primary">Service</li>
+                </ol>    
+            </div>
+        </div> -->
+        <!-- Header End -->
+
+
+<!-- Service Start -->
+<div class="container-fluid service py-5 bg-light appoint">
+    <div class="container py-5">
+
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <h1 class="fs-3 mb-20" style="margin-bottom: 10px; white-space: nowrap;">
+                Our Solutions
+                <span class="typewriter-text" style="background: linear-gradient(#0874b0 0%, #2ab4ff 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;">
+                    and Services
+                </span>
+            </h1>
+            <p class="mb-5">we are dedicated to solving complex challenges through innovative AI solutions.</p>
+
+        </div>
+
+        <!-- fadeInLeft -->
+        <!-- Service 1 -->
+        <div class="service-section wow fadeInUp mb-5" data-wow-delay="0.2s">
+            <!-- <h4 class="mb-3">Text and Code Recognition</h4>
+            <p class="mb-4">OCR solutions for detecting bearing/tyre codes, number plates, character counting, and duplicate QR code recognition in complex environments.</p> -->
+            <div class="row g-3">
+                <div class="col-md-4 wow fadeInLeft">
+                    <div class="card">
+                        <img src="img/bearing_ocr.png" class="card-img-top" alt="Text Recognition Example 1">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">OCR on Bearing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/Vehicle-Number-Plate-Detection.jpg" class="card-img-top" alt="Text Recognition Example 2">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Vehicle Number Plate Detection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInRight">
+                    <div class="card">
+                        <img src="img/Duplicate_QR_Code.png" class="card-img-top" alt="Text Recognition Example 3">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Duplicate QR Code Detection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-section wow fadeInUp mb-5" data-wow-delay="0.4s">
+            <!-- <h4 class="mb-3">Defect and Quality Inspection</h4>
+            <p class="mb-4">Inspection solutions for surface defects, weld checks, packaging integrity, solder joints, and edge detection for manufacturing processes.</p> -->
+            <div class="row g-3">
+                <div class="col-md-4 wow fadeInLeft">
+                    <div class="card">
+                        <img src="img/Character-Count.png" class="card-img-top" alt="Defect Inspection Example 1">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Character Count</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/Defect-Detection.png" class="card-img-top" alt="Defect Inspection Example 2">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Defect Detection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInRight">
+                    <div class="card">
+                        <img src="img/Surface_imperfection_detection.png" class="card-img-top" alt="Defect Inspection Example 3">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Surface Imperfection Detection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-section wow fadeInUp mb-5" data-wow-delay="0.6s">
+            <!-- <h4 class="mb-3">Presence, Shape, & Component Verification</h4>
+            <p class="mb-4">Solutions for verifying component presence, shape detection, and 3D object recognition in various industrial applications.</p> -->
+            <div class="row g-3">
+                <div class="col-md-4 wow fadeInLeft">
+                    <div class="card">
+                        <img src="img/Weld-Inspection.png" class="card-img-top" alt="Component Verification Example 1">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Weld Inspection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/Packaging-Integrity-Check.png" class="card-img-top" alt="Component Verification Example 2">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Packaging Integrity Check</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card wow fadeInRight">
+                        <img src="img/SolderJointInspection.png" class="card-img-top" alt="Component Verification Example 3">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Solder Joint Inspection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-section wow fadeInUp" data-wow-delay="0.8s">
+            <!-- <h4 class="mb-3">Measurement and Analysis</h4>
+            <p class="mb-4">Providing precise measurements for color, texture, gloss, and reflectivity, enabling detailed product analysis.</p> -->
+            <div class="row g-3">
+                <div class="col-md-4 wow fadeInLeft">
+                    <div class="card">
+                        <img src="img/EdgeContourDetection.png" class="card-img-top" alt="Measurement Example 1">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Edge and Contour Detection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/3D-Object-Recogntion.png" class="card-img-top" alt="Measurement Example 2">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">3D Object Recognition</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card wow fadeInRight">
+                        <img src="img/ComponentPresenceVerification.png" class="card-img-top" alt="Measurement Example 3">
+                        <div class="card-body services-heading-text">
+                            <p class="card-text">Component Presence Verification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Service End -->
+</section>
+
+
+
+
+
+
+        
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s" >
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-9">
+                    <div class="mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-6 col-xl-5">
+                                <div class="footer-item">
+                                    <a href="index.html" class="p-0">
+                                        <!-- <h3 class="text-white"><i class="fab fa-slack me-3"></i> LifeSure</h3> -->
+                                        <!-- <img src="img/footerLogo.png" alt="Logo" width=""> -->
+                                        <h3><img src="img/footerLogo.png" alt="Logo" class="navbar-logo"> <span
+                                                style="color: #fff;">Pixonate</span></h3>
+
+                                    </a>
+                                    <p class="text-white mb-4">Pixonate Lab Private Limited creates advanced AI-powered solutions that transform manufacturing processes across diverse industries.</p>
+                                    <div class="footer-btn d-flex">
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i
+                                                class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i
+                                                class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="#"><i
+                                                class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-0" href="#"><i
+                                                class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3">
+                                <div class="footer-item">
+                                    <h4 class="text-white mb-4">Useful Links</h4>
+                                    <a href="#"><i class="fas fa-angle-right me-2"></i>About</a>
+                                    <a href="#"><i class="fas fa-angle-right me-2"></i>Services</a>
+                                    <a href="#"><i class="fas fa-angle-right me-2"></i>Carrers</a>
+                                    <a href="#"><i class="fas fa-angle-right me-2"></i>Contact</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4">
+                                <div class="footer-item">
+                                    <h4 class="mb-4 text-white">Instagram</h4>
+                                    <div class="row g-3">
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="img/instagram-footer-1.jpg" class="img-fluid w-100" alt="">
+                                                <div class="footer-search-icon">
+                                                    <a href="img/instagram-footer-1.jpg"
+                                                        data-lightbox="footerInstagram-1" class="my-auto"><i
+                                                            class="fas fa-link text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="img/instagram-footer-2.jpg" class="img-fluid w-100" alt="">
+                                                <div class="footer-search-icon">
+                                                    <a href="img/instagram-footer-2.jpg"
+                                                        data-lightbox="footerInstagram-2" class="my-auto"><i
+                                                            class="fas fa-link text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="img/instagram-footer-3.jpg" class="img-fluid w-100" alt="">
+                                                <div class="footer-search-icon">
+                                                    <a href="img/instagram-footer-3.jpg"
+                                                        data-lightbox="footerInstagram-3" class="my-auto"><i
+                                                            class="fas fa-link text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="img/instagram-footer-4.jpg" class="img-fluid w-100" alt="">
+                                                <div class="footer-search-icon">
+                                                    <a href="img/instagram-footer-4.jpg"
+                                                        data-lightbox="footerInstagram-4" class="my-auto"><i
+                                                            class="fas fa-link text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="img/instagram-footer-5.jpg" class="img-fluid w-100" alt="">
+                                                <div class="footer-search-icon">
+                                                    <a href="img/instagram-footer-5.jpg"
+                                                        data-lightbox="footerInstagram-5" class="my-auto"><i
+                                                            class="fas fa-link text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="img/instagram-footer-6.jpg" class="img-fluid w-100" alt="">
+                                                <div class="footer-search-icon">
+                                                    <a href="img/instagram-footer-6.jpg"
+                                                        data-lightbox="footerInstagram-6" class="my-auto"><i
+                                                            class="fas fa-link text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-5" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="row g-0">
+                            <div class="col-12">
+                                <div class="row g-4">
+                                    <div class="col-lg-6 col-xl-4">
+                                        <div class="d-flex">
+                                            <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white">Address</h4>
+                                                <p class="mb-0">Pimpri Chinchwad, Maharashtra 411027
+                                                    </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-4">
+                                        <div class="d-flex">
+                                            <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                <i class="fas fa-envelope fa-2x"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white">Mail Us</h4>
+                                                <p class="mb-0">contact@pixonate.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-xl-4">
+                                        <div class="d-flex">
+                                            <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                <i class="fa fa-phone-alt fa-2x"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="text-white">Telephone</h4>
+                                                <p class="mb-0">+91 8275563954</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <center>
+                    <span class="text-body"><a href="#" class="text-white">© 2024 https://www.pixonate.in</a>. <span class="text-white">All rights reserved.</span></span>
+                </center>
+
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        <script src="js/banner.js"></script>
+
+    </body>
+
+</html>
