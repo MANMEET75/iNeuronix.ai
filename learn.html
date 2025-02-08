@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>iNeuronix.ai</title>
+    <link rel="icon" type="image/x-icon" href="img/siteicon.png" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.css">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+      <!-- Add FontAwesome for icons -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+
+    <!-- Add FontAwesome for icons -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <style>
+    .header-carousel {
+      position: relative;
+    }
+
+    .header-carousel-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner-carousel .slide-item .left-top-line,
+    .banner-carousel .slide-item .right-bottom-curve,
+    .banner-carousel .slide-item .right-top-curve {
+      position: absolute;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 1000ms ease, transform 1000ms ease;
+    }
+
+    .banner-carousel .slide-item .left-top-line {
+      left: 0;
+      top: 0;
+      width: 350px;
+      max-width: 100%;
+      height: 100%;
+      background: url(img/left-curve-line.png) left top no-repeat;
+      transform: translateY(-100%);
+    }
+
+    .banner-carousel .slide-item .right-bottom-curve {
+      right: 0;
+      top: 0;
+      width: 655px;
+      max-width: 100%;
+      height: 100%;
+      background: url(img/right-curved-bg.png) right bottom no-repeat;
+      transform: translateX(700px);
+    }
+
+    .banner-carousel .slide-item .right-top-curve {
+      right: 0;
+      top: 0;
+      width: 164px;
+      max-width: 100%;
+      height: 100%;
+      background: url(img/right-white-curve.png) right top no-repeat;
+      transform: translateX(400px);
+    }
+
+    /* Active slide styles */
+    .banner-carousel .active .left-top-line {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 200ms;
+    }
+
+    .banner-carousel .active .right-bottom-curve {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 1300ms;
+    }
+
+    .banner-carousel .active .right-top-curve {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 1300ms;
+    }
+
+    .custom-section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0;
+      /* Adjust padding as needed */
+    }
+
+    /* Scroll effect */
+    .custom-section {
+      animation: scrollEffect 1s ease-in-out forwards;
+    }
+
+    @keyframes scrollEffect {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Shine effect */
+    .shine-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .custom-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      opacity: 0;
+      /* Start with the image hidden */
+      animation: fadeIn 1s forwards;
+      /* Fade-in animation */
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+        /* Start from the left */
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0) 50%
+      );
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -50%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* button css start navbar */
+    .pulse-glow {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    .pulse-glow::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: pulse-glow-effect 2s infinite;
+      z-index: 0;
+    }
+
+    .pulse-glow:hover::before {
+      animation: pulse-glow-effect 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse-glow-effect {
+      0% {
+        transform: scale(3);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    .pulse-glow:hover {
+      box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* button css end */
+
+    .custom-topbar {
+      background-color: #408fd4;
+    }
+
+    .custom-border {
+      border-color: white !important;
+    }
+
+    .text-white {
+      color: white !important;
+    }
+
+    /* animation for about us page */
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .animate-image {
+      animation: slideInFromRight 2.5s ease-in-out forwards;
+    }
+
+    .animate-text {
+      animation: slideInFromLeft 2.5s ease-in-out forwards;
+    }
+
+    .custom-section {
+      padding-top: 100px;
+      /* Add space at the top */
+      padding-bottom: 100px;
+      /* Add space at the bottom */
+    }
+
+    .welcome-heading {
+      font-size: 2rem;
+      /* Larger font for prominence */
+      font-weight: 700;
+      /* Bold for emphasis */
+      color: #333;
+      /* Dark grey for a professional look */
+      margin-bottom: 20px;
+    }
+
+    .custom-section {
+      border-radius: 10px;
+    }
+
+    .custom-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .custom-paragraph {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .nav-tabs .nav-link {
+      border: none;
+      background-color: transparent;
+      color: #6c757d;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+    }
+
+    .AboutusBottomIcons {
+      color: #007bff;
+    }
+
+    .shine-effect img {
+      transition: transform 0.3s ease;
+    }
+
+    .shine-effect img:hover {
+      transform: scale(1.05);
+    }
+
+    .animate-text {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .animate-image {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Styles for the carousel */
+    .header-carousel-item {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      /* Prevent overflow */
+    }
+
+    /* Styles for the canvas */
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      /* Ensures canvas is above the background but below the text */
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Carousel caption text style */
+    .carousel-caption {
+      position: relative;
+      z-index: 2;
+      /* Keeps the text above the canvas */
+    }
+
+    /* Additional styles for carousel content */
+    .left-top-line,
+    .right-bottom-curve,
+    .right-top-curve {
+      position: absolute;
+      z-index: 3;
+      /* Ensure these lines/curves stay above canvas */
+    }
+
+    /* Other content styling */
+    .text-white,
+    .fw-bold,
+    .display-1 {
+      z-index: 4;
+    }
+
+    .service-item {
+      margin: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item-inner {
+      transition: all 0.3s ease;
+    }
+
+    .service-item:hover .service-item-inner {
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-10px);
+    }
+
+    .service-icon img {
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover .service-icon img {
+      transform: scale(1.1);
+    }
+
+    .service-item h4,
+    .service-item p {
+      transition: color 0.3s ease;
+    }
+
+    .service-item:hover h4 {
+      color: #1d7185;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .service-item {
+        margin: 10px 5px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .service-item {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-item,
+      .footer p,
+      .footer h4 {
+        text-align: left;
+      }
+    }
+
+    .modal {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-header {
+      border-bottom: 1px solid #505050;
+      padding: 12px 16px 6px 16px;
+      .modal-title {
+        color: #ccc;
+
+        margin: 0;
+      }
+      .close {
+        font-size: 32px;
+        opacity: 1;
+        color: #ccc;
+        text-shadow: none;
+        outline: none;
+      }
+    }
+    .modal-content {
+      border-radius: 0;
+      border: 0;
+      background-color: #323232;
+    }
+    .img-responsive {
+      width: 100%;
+    }
+    button.btn-play {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      padding: 0;
+      margin: 0;
+      margin-left: -15px;
+      border: 0;
+      border-radius: 0;
+      outline: 0 !important;
+      width: 100%;
+      background-color: transparent;
+      color: rgba(245, 245, 245, 0.8);
+      &:hover,
+      &:active,
+      &:visited,
+      &:focus {
+        color: rgba(255, 255, 255, 1);
+      }
+      .glyphicon {
+        padding: 0;
+        margin: 0;
+        color: inherit;
+        background-color: inherit;
+        font-size: 64px;
+      }
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      button.btn-play {
+        .glyphicon {
+          font-size: 56px;
+        }
+      }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      button.btn-play {
+        .glyphicon {
+          font-size: 46px;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      a.video {
+        display: block;
+      }
+      button.btn-play {
+        .glyphicon {
+          font-size: 56px;
+        }
+      }
+    }
+
+    .play-icon {
+  width: 3rem; /* Adjust size for responsiveness */
+  height: 3rem; /* Ensure circular shape */
+  font-size: 1.5rem; /* Icon size relative to button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+.play-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+@media (max-width: 768px) {
+  .play-icon {
+    width: 2.5rem; /* Smaller size on small screens */
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .play-icon {
+    width: 2rem; /* Adjust further for very small screens */
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+
+  </style>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-70 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div
+      class="container-fluid topbar px-0 px-lg-4 py-2 d-none d-lg-block custom-topbar"
+    >
+      <div class="container">
+        <div class="row gx-0 align-items-center">
+          <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+            <div class="d-flex flex-wrap">
+              <div class="border-end pe-3 custom-border">
+                <a href="#" class="text-white small"
+                  ><i class="fas fa-phone-alt text-white me-2"></i>+91
+                  821401XX22</a
+                >
+              </div>
+              <div class="ps-3">
+                <a href="mailto:example@gmail.com" class="text-white small"
+                  ><i class="fas fa-envelope text-white me-2"></i>
+                  ravi.pratap@ineuronix.tech</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-flex justify-content-end">
+              <div class="d-flex border-end pe-3 custom-border">
+                <a class="btn p-0 text-white me-3" href="#"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn p-0 text-white me-3" href="#"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn p-0 text-white me-3" href="#"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="btn p-0 text-white me-0"
+                  href="https://www.linkedin.com/in/ineuronix-ai-750268344"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topbar End -->
+    <!-- color code theme #408fd4 -->
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a href="index.html" class="navbar-brand p-0">
+            <img
+              src="img/iNeuronix.ailogo.png"
+              alt="Logo"
+              class="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <!-- Align all items to the right including "Get a Quote" button -->
+            <div class="navbar-nav ms-auto align-items-center">
+              <a href="index.html" class="nav-item nav-link active">HOME</a>
+              <a href="index.html" class="nav-item nav-link">ABOUT</a>
+              <a href="index.html" class="nav-item nav-link">SERVICES</a>
+              <a href="learn.html" class="nav-item nav-link">LEARN</a>
+              <!-- <a href="carrer.html" class="nav-item nav-link">Careers</a> -->
+              <a href="index.html" class="nav-item nav-link">CONTACT</a>
+              <!-- Get a Quote Button -->
+              <div class="nav-btn px-3">
+                <a
+                  href="#"
+                  id="getQuoteBtn"
+                  class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0 pulse-glow"
+                  style="background-color: #408fd4"
+                  >Enquire Now</a
+                >
+              </div>
+
+              <!-- Modal for Query Box -->
+              <div id="quoteModal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Send a Query</h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="quoteForm">
+                        <div class="mb-3">
+                          <label for="query" class="form-label"
+                            >Your Query</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="query"
+                            rows="3"
+                            placeholder="Write your query here..."
+                          ></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="sendEmailBtn"
+                      >
+                        Send
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Modal Search Start -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Search by keyword
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body d-flex align-items-center bg-primary">
+            <div class="input-group w-75 mx-auto d-flex">
+              <input
+                type="search"
+                class="form-control p-3"
+                placeholder="keywords"
+                aria-describedby="search-icon-1"
+              />
+              <span
+                id="search-icon-1"
+                class="btn bg-light border nput-group-text p-3"
+                ><i class="fa fa-search"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Search End -->
+
+<!-- YouTube Section Starts -->
+<section class="container my-5">
+    <div class="mb-5">
+    
+    <h3 class="text-center text-primary mb-4" id="youtube-gallery">
+      🎥 Gallery of YouTube Videos & Shorts
+    </h3>
+  
+    <!-- Full-Length Videos Section -->
+    <h4 class="mb-3" style="color: #408fd4;">Full-Length Videos</h4>
+    <div class="row g-4">
+      <!-- Video 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <div class="position-relative">
+            <img
+              src="https://img.youtube.com/vi/5AJchjvlkFM/mqdefault.jpg"
+              alt="Install Bolt.DIY Locally on Windows | Integrate LLMs: DeepSeek, OpenAI, Hugging Face & More"
+              class="card-img-top img-fluid rounded"
+            />
+            <a
+              href="https://youtu.be/5AJchjvlkFM"
+              target="_blank"
+              class="btn btn-primary position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+              aria-label="Play video Install Bolt.DIY Locally on Windows"
+            >
+              <i class="fas fa-play"></i>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Install Bolt.DIY Locally on Windows</h5>
+            <p class="card-text text-muted">
+              Learn to integrate LLMs like DeepSeek, OpenAI, Hugging Face & More.
+            </p>
+            <span class="badge bg-success">Full Video</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Video 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <div class="position-relative">
+            <img
+              src="https://img.youtube.com/vi/Y2lNra4HDlc/mqdefault.jpg"
+              alt="How to Load DeepSeek-Vision’s Janus Model in Google Colab | Step-by-Step Guide"
+              class="card-img-top img-fluid rounded"
+            />
+            <a
+              href="https://youtu.be/Y2lNra4HDlc"
+              target="_blank"
+              class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+              aria-label="Play video How to Load DeepSeek-Vision’s Janus Model"
+            >
+              <i class="fas fa-play"></i>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Load DeepSeek-Vision’s Janus Model</h5>
+            <p class="card-text text-muted">Step-by-step guide for Google Colab using Python Programming.</p>
+            <span class="badge bg-success">Full Video</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
+<div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/vvIVIOD5pmQ/mqdefault.jpg"
+          alt="How to Load the DeepSeek-R1 Model in Google Colab Using Ollama | Step-by-Step Tutorial"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtu.be/vvIVIOD5pmQ"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play video How to Load the DeepSeek-R1 Model"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">How to Load the DeepSeek-R1 Model</h5>
+        <p class="card-text text-muted">Step-by-step tutorial using Ollama in Google Colab using Python Programming.</p>
+        <span class="badge bg-success">Full Video</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Video Card 4 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/NCKCXyfZfzA/mqdefault.jpg"
+          alt="Open Source vs Closed Source Models, LLMs, and Software: Key Differences and When to Use Them"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtu.be/NCKCXyfZfzA"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play video Open Source vs Closed Source Models"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Open Source Models vs Closed Source Models</h5>
+        <p class="card-text text-muted">Key differences and when to use them.</p>
+        <span class="badge bg-success">Full Video</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Video Card 5 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/DJSUKn8GJug/mqdefault.jpg"
+          alt="Automate Image Orientation Correction with AI: A Step-by-Step Guide"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtu.be/DJSUKn8GJug"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play video Automate Image Orientation Correction"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Automate Image Orientation Correction</h5>
+        <p class="card-text text-muted">A step-by-step guide using AI.</p>
+        <span class="badge bg-success">Full Video</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Video Card 6 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/vr5sCW8g6pM/mqdefault.jpg"
+          alt="How to Select & Load the Best Hugging Face Model | Real-World Examples & Step-by-Step Guide"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtu.be/vr5sCW8g6pM"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play video Select & Load the Best Hugging Face Model"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Select & Load the Best Hugging Face Model</h5>
+        <p class="card-text text-muted">Real-world examples and step-by-step guide.</p>
+        <span class="badge bg-success">Full Video</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Video Card 7 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/jHq0szbqL9Y/mqdefault.jpg"
+          alt="How to Create & Use Hugging Face Access Tokens | Fine-Grained, Read, Write Explained | Generative AI"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtu.be/jHq0szbqL9Y"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play video Create & Use Hugging Face Access Tokens"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Create & Use Hugging Face Access Tokens</h5>
+        <p class="card-text text-muted">Fine-grained, read, and write explained.</p>
+        <span class="badge bg-success">Full Video</span>
+      </div>
+    </div>
+  </div>
+  
+  
+      <!-- Repeat for other full-length videos -->
+      <!-- Add cards for all other videos following the same structure -->
+    </div>
+  
+    <!-- Shorts Section -->
+    <h4 class="mt-5 mb-3" style="color: #408fd4;">YouTube Shorts</h4>
+    <div class="row g-4">
+      <!-- Short 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <div class="position-relative">
+            <img
+              src="https://img.youtube.com/vi/7bcs5Qo1Xew/mqdefault.jpg"
+              alt="OpenAI o3-mini Struggles Without Vision! DeepSeek R1 SHOCKS Everyone!"
+              class="card-img-top img-fluid rounded"
+            />
+            <a
+              href="https://youtube.com/shorts/7bcs5Qo1Xew"
+              target="_blank"
+              class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+              aria-label="Play short OpenAI o3-mini Struggles Without Vision"
+            >
+              <i class="fas fa-play"></i>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">OpenAI o3-mini Struggles!</h5>
+            <p class="card-text text-muted">DeepSeek R1 shocks everyone!</p>
+            <span class="badge bg-warning">Short</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Short 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm border-0">
+          <div class="position-relative">
+            <img
+              src="https://img.youtube.com/vi/E8EFEJ_XKJ4/mqdefault.jpg"
+              alt="5 Vector Search Methods Explained in 60 Seconds!"
+              class="card-img-top img-fluid rounded"
+            />
+            <a
+              href="https://youtube.com/shorts/E8EFEJ_XKJ4"
+              target="_blank"
+              class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+              aria-label="Play short 5 Vector Search Methods"
+            >
+              <i class="fas fa-play"></i>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">5 Vector Search Methods</h5>
+            <p class="card-text text-muted">Explained in just 60 seconds!</p>
+            <span class="badge bg-warning">Short</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Short 3 -->
+<div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/cdIrGpb0aqM/mqdefault.jpg"
+          alt="What is RAG? #rag #generativeai #ai #largelanguagemodels #tech #coding"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtube.com/shorts/cdIrGpb0aqM"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play short What is RAG?"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">What is RAG?</h5>
+        <p class="card-text text-muted">#rag #generativeai #ai</p>
+        <span class="badge bg-warning">Short</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Short 4 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/xlN3HMVhSmg/mqdefault.jpg"
+          alt="5 Chunking Strategies for RAG #ai #coding #largelanguagemodels #langchain #learning #chunking"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtube.com/shorts/xlN3HMVhSmg"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play short 5 Chunking Strategies for RAG"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">5 Chunking Strategies for RAG</h5>
+        <p class="card-text text-muted">#ai #coding #largelanguagemodels</p>
+        <span class="badge bg-warning">Short</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Short 5 -->
+  <div class="col-md-4 col-sm-6">
+    <div class="card shadow-sm border-0">
+      <div class="position-relative">
+        <img
+          src="https://img.youtube.com/vi/EMslLvAOVHE/mqdefault.jpg"
+          alt="Unlock AI with iNeuronix.ai - Expert Tips Coming Soon! #ai #largelanguagemodels #coding"
+          class="card-img-top img-fluid rounded"
+        />
+        <a
+          href="https://youtube.com/shorts/EMslLvAOVHE"
+          target="_blank"
+          class="btn btn-primary btn-sm position-absolute top-50 start-50 translate-middle rounded-circle play-icon"
+          aria-label="Play short Unlock AI with iNeuronix.ai"
+        >
+          <i class="fas fa-play"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Unlock AI with iNeuronix.ai</h5>
+        <p class="card-text text-muted">#ai #largelanguagemodels #coding</p>
+        <span class="badge bg-warning">Short</span>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- Repeat for other shorts -->
+      <!-- Add cards for all other shorts following the same structure -->
+    </div>
+  </section>
+  <!-- YouTube Section Ends -->
+  
+
+  <!-- Optional: Include a grid system or additional CSS framework if needed -->
+  
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <!-- Company Info Section -->
+          <div class="col-md-6 col-lg-5">
+            <div class="footer-item">
+              <a href="index.html">
+                <h3>
+                  <img
+                    src="img/footerLogo.png"
+                    alt="Logo"
+                    class="navbar-logo"
+                  />
+                  <span style="color: #fff">iNeuronix.ai</span>
+                </h3>
+              </a>
+              <p class="text-white-50 mb-4">
+                iNeuronix.ai offers cutting-edge AI-powered solutions and expert
+                training, empowering businesses across industries to innovate
+                and excel in their processes.
+              </p>
+              <div class="footer-btn d-flex">
+                <a class="btn btn-md-square rounded-circle me-2" href="#"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-md-square rounded-circle me-2" href="#"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-md-square rounded-circle me-2" href="#"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a class="btn btn-md-square rounded-circle me-2" href="#"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Useful Links Section -->
+          <div class="col-md-6 col-lg-3">
+            <div class="footer-item">
+              <h4 class="text-white mb-4">Useful Links</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="text-white-50"
+                    ><i class="fas fa-angle-right me-2"></i>About</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-white-50"
+                    ><i class="fas fa-angle-right me-2"></i>Services</a
+                  >
+                </li>
+                <li>
+                  <!-- <a href="#" class="text-white-50"
+                    ><i class="fas fa-angle-right me-2"></i>Careers</a
+                  > -->
+                </li>
+                <li>
+                  <a href="#" class="text-white-50"
+                    ><i class="fas fa-angle-right me-2"></i>Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Info Section -->
+          <div class="col-lg-6 col-xl-4">
+            <div class="d-flex">
+              <div
+                class="btn-xl-square bg-primary text-white rounded-circle p-4 me-3"
+              >
+                <i class="fas fa-map-marker-alt fa-2x"></i>
+              </div>
+              <div>
+                <h4 class="text-white">Address</h4>
+                <p class="text-white-50 mb-0">Gurugram, Haryana, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xl-4">
+            <div class="d-flex">
+              <div
+                class="btn-xl-square bg-primary text-white rounded-circle p-4 me-3"
+              >
+                <i class="fas fa-envelope fa-2x"></i>
+              </div>
+              <div>
+                <h4 class="text-white">Mail Us</h4>
+                <p class="text-white-50 mb-0">ravi.pratap@ineuronix.tech</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xl-4">
+            <div class="d-flex">
+              <div
+                class="btn-xl-square bg-primary text-white rounded-circle p-4 me-3"
+              >
+                <i class="fas fa-phone-alt fa-2x"></i>
+              </div>
+              <div>
+                <h4 class="text-white">Telephone</h4>
+                <p class="text-white-50 mb-0">+91 844221xxxx1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <center>
+            <span class="text-body"
+              ><a href="#" class="text-white"
+                >© 2024 http://www.ineuronix.tech</a
+              >. <span class="text-white">All rights reserved.</span></span
+            >
+          </center>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <script>
+      $(document).delegate(
+        '*[data-toggle="lightbox"]',
+        "click",
+        function (event) {
+          event.preventDefault();
+          $(this).ekkoLightbox();
+        }
+      );
+    </script>
+
+    <!-- Back to Top -->
+    <a
+      href="#"
+      class="btn btn-lg-square rounded-circle back-to-top contact-sendbtn"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/4.0.1/ekko-lightbox.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/animations.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
